@@ -24,11 +24,11 @@ public class Test {
 		y = layerSet.calc(x);
 		// 출력.
 		for (i = 0; i < 19; i++) {
-			System.out.print(x[i] + " ");
+			System.out.printf("%.2f ",x[i]);
 		}
 		System.out.println(" ");
 		for (i = 0; i < 8; i++) {
-			System.out.print(y[i] + " ");
+			System.out.printf("%.2f ",y[i]);
 		}
 		System.out.println(" ");
 	}
@@ -40,11 +40,11 @@ public class Test {
 		y = layerSet.calc(x);
 		
 		for (i = 0; i < 19; i++) {
-			System.out.print(x[i] + " ");
+			System.out.printf("%.2f ",x[i]);
 		}
 		System.out.println(" ");
 		for (i = 0; i < 8; i++) {
-			System.out.print(y[i] + " ");
+			System.out.printf("%.2f ",y[i]);
 		}
 		System.out.println(" ");
 	}
@@ -87,8 +87,26 @@ public class Test {
 		}
 		
 		Matrix[] M = L.getweight();
+		for (int i = 0; i < M.length; i++) {
+			for (int j = 0; j < M[i].getRowDimension(); j++) {
+				for(int k=0;k<M[i].getColumnDimension();k++) {
+					System.out.print(M[i].get(j, k)+" ");
+				}
+				System.out.println("");
+			}
+			System.out.println("");
+		}
 		filewrite(M);
 		M=fileread();
+		for (int i = 0; i < M.length; i++) {
+			for (int j = 0; j < M[i].getRowDimension(); j++) {
+				for(int k=0;k<M[i].getColumnDimension();k++) {
+					System.out.print(M[i].get(j, k)+" ");
+				}
+				System.out.println("");
+			}
+			System.out.println("");
+		}
 		System.out.println("   ");
 		layerSet.setweight(M);
 		
@@ -128,25 +146,24 @@ public class Test {
 			while (true) {
 				int i;
 				i = fr.read();
-				if (i == -1)
-					break;
+			
 				if (i == 32) {
 					double d = Double.parseDouble(s);
-					m0[c1][c2] = d;
+					m0[c2][c1] = d;
 					c1++;
-					if (c1 == 8)
+					if (c1 == 19)
 						c1 = 0;
 					s = "";
 					continue;
 				}
 				if (i == 13) {
 					fr.read();
-					if (c3 == 1) {
+					if (c3 == 8) {
 						break;
 					}
 					c3++;
 					c2++;
-					if (c2 == 19)
+					if (c2 == 8)
 						c2 = 0;
 					s = "";
 					continue;
@@ -160,7 +177,7 @@ public class Test {
 					break;
 				if (i == 32) {
 					double d = Double.parseDouble(s);
-					m0[c1][c2] = d;
+					m1[c1][c2] = d;
 					c1++;
 					if (c1 == 8)
 						c1 = 0;
