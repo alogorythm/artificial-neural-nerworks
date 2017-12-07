@@ -85,8 +85,13 @@ public class UI {
             if(p==19)
             {
                p=0;
-                Test testing = new Test();
-                testing.showing();
+               Test testing = new Test();
+               try {
+					   testing.showing();
+				   } catch (IOException e) {
+					   // TODO Auto-generated catch block
+					   e.printStackTrace();
+				   }
             }
          }
       });      
