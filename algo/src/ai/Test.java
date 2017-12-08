@@ -251,6 +251,15 @@ public class Test {
 		}
 		return d;
 	}
+	static double[][] addData(double[][] d,double[] d1){
+		ArrayList<double[]> A = new ArrayList<double[]>();
+		for(int i=0;i<d.length;i++) {
+			A.add(d[i]);
+		}
+		A.add(d1);
+		double[][] D=AtoD(A);
+		return D;
+	}
 	public static void showing() throws IOException {
 		Matrix[] M = null;
 		double[][] size = new double[19][8];
