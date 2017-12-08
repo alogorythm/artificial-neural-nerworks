@@ -204,6 +204,7 @@ public class Test {
 					double d = Double.parseDouble(s);
 					D[c2][c1]=d;
 					s = "";
+					c1++;
 					continue;
 				}
 				if (i == 13) {
