@@ -23,7 +23,7 @@ public class diagnosis {
 		//test에서 받아와야함 숫자 어레이를. 그걸 testresult에 저장 합시다. 바로 아래
 		/*int[] testresult = null;*//*= {1,0,0,0,0,0,0,0}; */  //되는지보기위해 임의로
 		int i=0,count=0;
-		String[] disease= {"위염","간염","식도염","폐렴","장염","식중독","천식","결핵"};
+		String[] disease= {"gastritis","hepatitis","Esophagitis","Pneumonia","enteritis","food poisoning","asthma","Tuberculosis"};
 		screen.setSize(400,280);
 		screen.setLocation(470, 40);
 		JLabel title=new JLabel("~~~~~~~~ DIAGNOSIS ~~~~~~~~",JLabel.CENTER);
@@ -37,14 +37,14 @@ public class diagnosis {
 			}
 		}
 		if(count==0) {
-			result=result+"건강합니다";
+			result=result+"are Healthy";
 		}
 		else if(count==8) {
 			result="";
-			result=result+"얼마 남지 않으셨습니다...";
+			result=result+"will die soon....";
 		}
 		else  {
-			result=result+"에 걸리셨습니다";
+			result="have gotten to"+ result;
 		}
 		p = new Panel();
 		pt= new Panel();
@@ -52,7 +52,7 @@ public class diagnosis {
 		list.add(" ");
 		list.add(" ");
 		list.add(" ");
-		list.add("당신은");
+		list.add("You");
 		list.add(" ");
 		list.add(result);
 		p.add(list);
